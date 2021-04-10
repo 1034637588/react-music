@@ -1,8 +1,9 @@
-import React, { memo } from 'react'
+import React, { memo } from 'react';
 
+import styles from './style.module.less';
 export default memo(function Header() {
     return (
-        <div>
+        <div className={styles.HeaderWrapper}>
             Header
         </div>
     )
