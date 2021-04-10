@@ -1,7 +1,10 @@
 import React, { memo } from 'react';
-import { NavLink } from 'react-router-dom';
 
-import { headerLinks } from '@/common/local-data'
+import { NavLink } from 'react-router-dom';
+import { headerLinks } from '@/common/local-data';
+
+import { Input } from 'antd';
+import { SearchOutlined } from '@ant-design/icons'
 import styles from './style.module.scss';
 export default memo(function Header() {
     const showSelectItem = (item, index) => {
@@ -34,6 +37,7 @@ export default memo(function Header() {
                     </div>
                 </div>
                 <div className={styles.HeaderRight}>
+                    <Input className={styles.search} placeholder="音乐/视频/电台/用户" prefix={<SearchOutlined />} />
                     <div className={styles.center}>创作者中心</div>
                     <div>登录</div>
                 </div>
