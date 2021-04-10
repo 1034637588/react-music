@@ -10,7 +10,7 @@ export default memo(function Header() {
     const showSelectItem = (item, index) => {
         if (index < 3) {
             return (
-                <NavLink activeClassName={styles.active} to={item.link} exact>
+                <NavLink activeClassName={styles.active} to={item.link}>
                     {item.title}
                     <i className={`${styles.icon} sprite_01`}></i>
                 </NavLink>
