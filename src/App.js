@@ -1,12 +1,9 @@
+import React, { memo } from 'react'
 
-function App() {
+export default memo(function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        Music
-      </header>
+    <div>
+      App
     </div>
-  );
-}
-
-export default App;
+  )
+})
