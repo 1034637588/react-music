@@ -1,7 +1,6 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect } from 'react';
 import { renderRoutes } from 'react-router-config';
 import { NavLink } from 'react-router-dom';
-
 import { dicoverMenu } from "@/common/local-data";
 import {
     DiscoverWrapper,
