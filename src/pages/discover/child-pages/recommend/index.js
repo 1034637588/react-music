@@ -1,22 +1,23 @@
 import React, { memo, useEffect } from 'react';
 import { useSelector, useDispatch, shallowEqual } from 'react-redux';
-import { getTopBannerAction } from './store/actionCreator';
+import { getTopBannerAction } from './store/actionCreators';
 
+import MBanner from './components/banner';
 function Recommend(props) {
 
   const { topBanners } = useSelector(state => ({
-    topBanners: state.recommend.topBanners
+    topBanners: state.recommend.get('topBanners')
   }),shallowEqual);
 
   const dispatch = useDispatch();
-
+  
   useEffect(() => {
     dispatch(getTopBannerAction());
   }, [dispatch]);
 
   return (
     <div>
-      Recommend {topBanners.length}
+      <MBanner></MBanner>
     </div>
   )
 }
