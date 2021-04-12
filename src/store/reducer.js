@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import { reducer as recommendReducer } from '../pages/discover/child-pages/recommend/store'
+import { reducer as recommend } from '../pages/discover/child-pages/recommend/store'
 
 const reducer = combineReducers({
-    recommendReducer
+    recommend
 });
 
 export default reducer;

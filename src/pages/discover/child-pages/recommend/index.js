@@ -1,13 +1,18 @@
 import React, { memo, useEffect } from 'react';
-import { connect } from 'react-redux';
-import { getTopBannerAction } from './store/actionCreator'
+import { useSelector, useDispatch, shallowEqual } from 'react-redux';
+import { getTopBannerAction } from './store/actionCreator';
 
 function Recommend(props) {
-  const { getBanners, topBanners } = props;
+
+  const { topBanners } = useSelector(state => ({
+    topBanners: state.recommend.topBanners
+  }),shallowEqual);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    getBanners();
-  }, []);
+    dispatch(getTopBannerAction());
+  }, [dispatch]);
 
   return (
     <div>
@@ -15,11 +20,12 @@ function Recommend(props) {
     </div>
   )
 }
-
-const mapStateToProps = state => ({ topBanners: state.recommendReducer.topBanners });
-const mapDispatchToProps = dispatch => ({
-  getBanners: () => {
-    dispatch(getTopBannerAction())
-  }
-})
-export default connect(mapStateToProps, mapDispatchToProps)(memo(Recommend))
+export default memo(Recommend);
+// const { getBanners, topBanners } = props;
+// const mapStateToProps = state => ({ topBanners: state.recommend.topBanners });
+// const mapDispatchToProps = dispatch => ({
+//   getBanners: () => {
+//     dispatch(getTopBannerAction())
+//   }
+// })
+// export default connect(mapStateToProps, mapDispatchToProps)(memo(Recommend))
