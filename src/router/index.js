@@ -1,15 +1,17 @@
+import React from 'react';
 import { Redirect } from "react-router-dom";
 
-import Mine from '@/pages/mine';
-import Discover from '@/pages/discover';
-import Friend from '@/pages/friend';
+const Mine = React.lazy(() => import("@/pages/mine"));
+const Discover = React.lazy(() => import("@/pages/discover"));
+const Friend = React.lazy(() => import("@/pages/friend"));
 
-import Recommend from "../pages/discover/child-pages/recommend";
-import Ranking from "../pages/discover/child-pages/ranking";
-import Songs from "../pages/discover/child-pages/songs";
-import Djradio from "../pages/discover/child-pages/djradio";
-import Artist from "../pages/discover/child-pages/artist";
-import Album from "../pages/discover/child-pages/album";
+const Recommend = React.lazy(() => import("../pages/discover/child-pages/recommend"));
+const Ranking = React.lazy(() => import("../pages/discover/child-pages/ranking"));
+const Songs = React.lazy(() => import("../pages/discover/child-pages/songs"));
+const Djradio = React.lazy(() => import("../pages/discover/child-pages/djradio"));
+const Artist = React.lazy(() => import("../pages/discover/child-pages/artist"));
+const Album = React.lazy(() => import("../pages/discover/child-pages/album"));
+
 const routers = [
   {
     path: '/',
