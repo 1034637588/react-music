@@ -8,7 +8,7 @@ import {
 } from './style';
 
 import MBanner from './components/banner';
-import MAnchor from './components/anchor';
+import MAlbum from './components/album';
 import MHot from './components/hot';
 import MRanking from './components/ranking';
 
@@ -20,7 +20,7 @@ function Recommend(props) {
       <Content className="wrap-v2">
         <RecommendLeft>
           <MHot />
-          <MAnchor />
+          <MAlbum />
           <MRanking />
         </RecommendLeft>
         <RecommendRight>
